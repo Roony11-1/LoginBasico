@@ -2,8 +2,10 @@ package com.patitofeliz.loginbasico
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Spinner
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -18,14 +20,21 @@ class PanelCalculadora : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_panel_calculadora)
 
-        var etUno:EditText = findViewById(R.id.etUno);
-        var etDos:EditText = findViewById(R.id.etDos);
-        var etOperacion:EditText = findViewById(R.id.etOperacion);
+        val etUno:EditText = findViewById(R.id.etUno);
+        val etDos:EditText = findViewById(R.id.etDos);
+        val etOperacion:EditText = findViewById(R.id.etOperacion);
 
-        var msgCalculadora:TextView = findViewById(R.id.msgCalculadora);
-        var msgResultado:TextView = findViewById(R.id.msgResultado);
+        val msgCalculadora:TextView = findViewById(R.id.msgCalculadora);
+        val msgResultado:TextView = findViewById(R.id.msgResultado);
 
-        var btnCalcular:Button = findViewById(R.id.btnCalcular);
+        val btnCalcular:Button = findViewById(R.id.btnCalcular);
+
+        val spOperaciones:Spinner = findViewById(R.id.spCalculadora)
+        val menuSPoperaciones = listOf("Sumar", "Restar", "Multiplicar", "Dividir")
+
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, menuSPoperaciones)
+
+        spOperaciones.adapter = adapter
 
         btnCalcular.setOnClickListener {
             if (etUno.getText().trim().isBlank() || etDos.getText().trim().isBlank())
@@ -50,6 +59,8 @@ class PanelCalculadora : AppCompatActivity() {
                     resultado = OpMatematicas.division(num1, num2);
                 else if (etOperacion.getText().toString().trim().equals("*"))
                     resultado = OpMatematicas.multiplicacion(num1, num2);
+                else
+                    msgCalculadora.setText("No existe esa operación")
 
                 msgResultado.setText(resultado.toString());
             }

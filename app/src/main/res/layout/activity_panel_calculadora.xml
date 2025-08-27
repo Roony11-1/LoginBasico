@@ -13,12 +13,12 @@
         android:layout_height="wrap_content"
         android:hint="Número 1"
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/btnAtras"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.003"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintVertical_bias="0.285" />
 
     <EditText
         android:id="@+id/etOperacion"
@@ -26,12 +26,12 @@
         android:layout_height="wrap_content"
         android:hint="+ - * /"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/btnCalcular"
-        app:layout_constraintEnd_toStartOf="@+id/etUno"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.236"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.518" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <EditText
         android:id="@+id/etDos"
@@ -39,12 +39,12 @@
         android:layout_height="wrap_content"
         android:hint="Número 2"
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/btnAtras"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.685"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.632" />
+        app:layout_constraintVertical_bias="0.39" />
 
     <Button
         android:id="@+id/btnCalcular"
@@ -52,11 +52,11 @@
         android:layout_height="wrap_content"
         android:text="Calcular"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/etUno"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.684"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintVertical_bias="0.216" />
 
     <TextView
         android:id="@+id/msgResultado"
@@ -64,9 +64,12 @@
         android:layout_height="wrap_content"
         android:text=""
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.632"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.111" />
 
     <TextView
         android:id="@+id/msgCalculadora"
@@ -75,12 +78,12 @@
         android:padding="8dp"
         android:text=""
         android:textColor="@android:color/holo_red_dark"
-        app:layout_constraintBottom_toTopOf="@+id/etOperacion"
-        app:layout_constraintEnd_toStartOf="@+id/etUno"
-        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.995"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.448" />
+        app:layout_constraintVertical_bias="0.606" />
 
     <Button
         android:id="@+id/btnAtras"
@@ -89,9 +92,20 @@
         android:text="Atrás"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etUno"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.458" />
+
+    <Spinner
+        android:id="@+id/spCalculadora"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.729" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
