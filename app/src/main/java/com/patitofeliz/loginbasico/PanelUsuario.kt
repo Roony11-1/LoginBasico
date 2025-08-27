@@ -16,11 +16,28 @@ class PanelUsuario : AppCompatActivity() {
 
         var botonFormulario:Button = findViewById(R.id.botonIrFormulario);
 
+        var botonCalculadora:Button = findViewById(R.id.botonIrCalculadora);
+
         botonFormulario.setOnClickListener {
 
-            val panelFormulario = Intent(this, PanelFormulario::class.java)
+            val irPanelFormulario = Intent(this, PanelFormulario::class.java);
 
-            startActivity(panelFormulario)
+            startActivity(irPanelFormulario);
+        }
+
+        botonCalculadora.setOnClickListener {
+
+            val irPanelCalculadora = Intent(this, PanelCalculadora::class.java);
+
+            startActivity(irPanelCalculadora);
+        }
+
+        var btnAtras:Button = findViewById(R.id.btnAtras);
+
+        btnAtras.setOnClickListener {
+            var activityAtras = Intent(this, MainActivity::class.java)
+
+            startActivity(activityAtras);
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

@@ -1,8 +1,8 @@
 package com.patitofeliz.loginbasico
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -12,19 +12,16 @@ class PanelFormulario : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        setContentView(R.layout.activity_panel_formulario)
 
-        var btnFormulario:Button = findViewById(R.id.btnFormulario);
+        var btnAtras:Button = findViewById(R.id.btnAtras);
 
-        btnFormulario.setOnClickListener {
-            val text = "Chupalo"
-            val duration = Toast.LENGTH_SHORT;
+        btnAtras.setOnClickListener {
+            var activityAtras = Intent(this, PanelUsuario::class.java)
 
-            val toast = Toast.makeText(this, text, duration);
-
-            toast.show();
+            startActivity(activityAtras);
         }
 
-        setContentView(R.layout.activity_panel_formulario)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

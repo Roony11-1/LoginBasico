@@ -16,6 +16,9 @@
             android:name=".PanelFormulario"
             android:exported="false" />
         <activity
+            android:name=".PanelCalculadora"
+            android:exported="false" />
+        <activity
             android:name=".PanelUsuario"
             android:exported="false" />
         <activity
