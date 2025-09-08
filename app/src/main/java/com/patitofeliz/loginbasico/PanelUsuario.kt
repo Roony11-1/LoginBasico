@@ -3,6 +3,7 @@ package com.patitofeliz.loginbasico
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,6 +18,10 @@ class PanelUsuario : AppCompatActivity() {
         var botonFormulario:Button = findViewById(R.id.botonIrFormulario);
 
         var botonCalculadora:Button = findViewById(R.id.botonIrCalculadora);
+
+        var txtUserName:TextView = findViewById(R.id.txtUserName);
+
+        txtUserName.text = intent.getStringExtra("pUsuario");
 
         botonFormulario.setOnClickListener {
 

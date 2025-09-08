@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
             if (usuarioLogin.equals(usuarioDefecto) && passwordLogin.equals(passwordDefecto))
             {
                 val panelUsuario = Intent(this, PanelUsuario::class.java)
+                panelUsuario.putExtra("pUsuario", campoUsuario.text.toString())
 
                 startActivity(panelUsuario)
             }
