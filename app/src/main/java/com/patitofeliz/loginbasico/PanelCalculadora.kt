@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ListView
 import android.widget.Spinner
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -35,6 +37,23 @@ class PanelCalculadora : AppCompatActivity() {
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, menuSPoperaciones)
 
         spOperaciones.adapter = adapter
+
+        val opcionesLv: ListView = findViewById(R.id.lyMenuPrincial);
+        val opcionesArr = arrayOf(
+            "sumar",
+            "resta",
+            "multiplicar",
+            "dividir"
+        )
+
+        opcionesLv.setOnItemClickListener { parent, view, position, id ->
+            val itemElegido = parent.getItemAtPosition(position).toString()
+            Toast.makeText(this, itemElegido, Toast.LENGTH_SHORT).show()
+        }
+
+        val adaptador = ArrayAdapter(this, android.R.layout.simple_list_item_1, opcionesArr)
+
+        opcionesLv.adapter = adaptador
 
         btnCalcular.setOnClickListener {
             if (etUno.getText().trim().isBlank() || etDos.getText().trim().isBlank())
