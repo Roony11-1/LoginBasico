@@ -43,7 +43,8 @@ class PanelCalculadora : AppCompatActivity() {
             "sumar",
             "resta",
             "multiplicar",
-            "dividir"
+            "dividir",
+            "vitoco te meo"
         )
 
         opcionesLv.setOnItemClickListener { parent, view, position, id ->
